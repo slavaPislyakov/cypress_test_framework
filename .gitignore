@@ -1,0 +1,9 @@
+report/*
+cypress/screenshots/*
+cypress/integration/examples/*
+cypress/videos/*
+package-lock.json
+node_modules
+reports
+.idea
+package-lock.json

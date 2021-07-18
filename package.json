@@ -1,0 +1,27 @@
+{
+  "name": "cypress_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean:report": "rimraf cypress/reports",
+    "combine:reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate:report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "generate:report:html": "npm run combine:reports && npm run generate:report",
+    "cy:open": "cypress open",
+    "cy:run:my_test": "npm run clean:report && npx cypress run --spec \"cypress/integration/my_test_onliner.js\" --browser chrome || npm run generate:report:html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.7.0",
+    "cypress-multi-reporters": "^1.5.0",
+    "mocha": "^8.4.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0",
+    "rimraf": "^3.0.2"
+  }
+}
