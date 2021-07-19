@@ -7,3 +7,5 @@ node_modules
 reports
 .idea
 package-lock.json
+allure-report
+allure-results
